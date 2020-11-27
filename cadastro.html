@@ -1,9 +1,11 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
-    <title>Tem VAGA ai?!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <title>Anuncie Sua Vaga!</title>
 </head>
 <body>
     <header class= "menu-principal">
@@ -11,7 +13,7 @@
             <div class= "header-1">
                 <div class= "logo">
                     <a href ="index.html"> 
-                        <img src= "./imagens/logotemvagaai.png"> 
+                        <img src= "imagens/logotemvagaai.png"> 
                     </a>
                 </div>
                     <div class= "redes-sociais">
@@ -61,19 +63,19 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Casa com 3 quartos e piscina</strong>
-            </h1> 
-                <div class="product">
-                    <img src="./imagens/piscina.jpg">
-                    <h3>
-                        <b>R$ 950 diária</b>
-                    </h3>
-                    <p>
-                        Typewriter fonts are typically the fonts resembling the printed letters on a classic typewriter, which is used for composing written documents during the time when there are no computers and only typewriters exist. Typewriter fonts often take on a grungy and classic look and are used to create digital art. Courier is probably the best known and at the same time the most overused typewriter font. American Typewriter designed by Joel Kaden and Tony Stan in 1974 is another well-known typewriter font, which is used by the famous “I Love New York” logo.
-                    </p>
-
-                    <button placeholder="idReserva" type="submit">Reserve Agora</button>
-                </div>
+                <strong>Anuncie uma vaga!</strong>
+            </h1>
+            <form action="./php/cadastro.php" method="POST" enctype="multipart/form-data" > 
+                    <label>Título da Vaga: </label><br>
+                    <input placeholder="" type="text" name="tituloVaga"/><br>
+                    <label>Descrição da Vaga: </label><br>
+                    <input placeholder="" type="text" name="descricaoVaga"/><br>
+                    <label>Preço: </label><br>
+                    <input placeholder="" type="number" name="valor"/><br>
+                    <label>Imagem: </label><br>
+                    <input placeholder="" type="file" name="arquivo"/><br>
+                    <input type="submit" id="cadastrar" />
+                </form>
         </div>
     </div>
 </footer>
@@ -95,10 +97,10 @@
 </div>
 
     
-    <script type="text/javascript" src="./js/jquery.js"></script>
-    <script type="text/javascript" src="./js/jquery-migrate.js"></script>
-    <script type="text/javascript" src="./js/slick.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 
