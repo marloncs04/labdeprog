@@ -1,0 +1,219 @@
+body{
+    
+    background: url(../imagens/papelfundo.webp);
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    margin: 0 auto;
+}
+ul{
+    padding: 0px!important;
+}
+.menu-principal{
+    width: 100%;
+    background-color: darkcyan;
+    height: 75px;
+}
+main, .content{
+    text-align: center;
+    margin: 0 auto;
+    width: 980px;
+    position: relative;
+}
+.logo{
+   
+    float: left;
+    padding: 15px;
+    width:25%;
+}
+.redes-sociais ul li{
+    margin-left: 23px;
+    display: inline-block;
+    list-style: none;
+    float: left;
+}
+.redes-sociais{
+    width: 20%;
+    float: right;
+}
+.header-2{
+    background-color: white;
+    width: 980px;
+    margin: 0 auto;
+ 
+}
+.menu-urls{
+    height: 80px;
+    border-bottom: 5px solid rgb(240, 233, 233);
+    
+
+}
+.menu ul li{
+    display: inline-block;
+    color: #34d4f0;
+    margin-left: 35px;
+    height: 65px;
+}
+.menu ul li:hover{
+    border-bottom: 3px solid #00bac6;
+}
+.menu ul li a:hover{
+    color: #00bac6;
+}
+.menu ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.menu{
+    float: left;
+    width:48%;
+}
+.busca{
+    text-align: center;
+    width: 35%;
+    float: right;
+}
+.busca input{
+    background-image: url('../imagens/lupa_i.png');
+    background-repeat: no-repeat;
+    height: 36px;
+    padding: 10px;
+    width: 190px;
+    margin-top: 12px;
+    background-position: right;
+    border: 1px solid #d6d6d6;
+}
+.busca button{
+    height: 36px;
+    width: 90px;
+    margin-top: 12px;
+    border: 1px solid #d6d6d6;
+}
+
+.col-100{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+button.slick-prev {
+    font-size: 0px;
+    border:none;
+    width: 64px;
+    height: 64px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+    background-image: url(../imagens/left-chevron.png);
+    top: 35%;
+    left: 10;
+}
+button.slick-next {
+    font-size: 0px;
+    border:none;
+    width: 64px;
+    height: 64px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+    background-image: url(../imagens/right-chevron.png);
+    top: 35%;
+    right: 10;
+}
+.slide-principal{
+    width: 100%!important;
+}
+.slick-initialized{
+    overflow: hidden;
+}
+.slick-dots li button{
+    font-size: 0px;
+    border: 5px solid #ffffff;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slick-dots{
+    margin: 0 auto;
+    width: 60%;
+    position: absolute;
+    left:45%;
+    top:450px;
+}
+li.slick-active button{
+    background-color: teal;
+}
+.slick-dots li {
+    padding-left: 10px;
+    display: inline-block;
+}
+.texto-destaque strong{
+    color: black;
+
+}
+.texto-destaue{
+    text-align: center;
+}
+.texto-destaque h1{
+    
+    text-transform: uppercase;
+    font-size: 25px;
+    color: cornflowerblue;
+}
+.texto-destaque h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.texto-destaque p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 15px;
+    color: grey;
+
+}
+.col-3{
+
+    width: 32%;
+    float: left;
+    position: relative;
+  
+}
+.bloco{
+    margin-top: 3em;
+    border: 1px solid #000;
+    padding: 3px;
+}
+.footer {
+    background-color: darkcyan;
+    color: white;
+    height: 90px;
+    margin-top: 2em;
+}
+.footer p {
+    padding: 20px;
+}
+.footer-2 {
+    background-color: gray;
+    color: white;
+    height: 45px;
+}
+
+.zoom { 
+    width: 300px; 
+    height: 300px; 
+    overflow: hidden; 
+    margin: 0 auto; 
+} 
+
+.zoom img { 
+    width:63%; 
+    transition: 0.5s all ease-in-out; 
+} 
+
+.zoom:hover img { 
+    transform: scale(1.5); 
+} 
