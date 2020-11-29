@@ -154,7 +154,7 @@ li.slick-active button{
     color: black;
 
 }
-.texto-destaue{
+.texto-destaque{
     text-align: center;
 }
 .texto-destaque h1{
@@ -217,3 +217,43 @@ li.slick-active button{
 .zoom:hover img { 
     transform: scale(1.5); 
 } 
+.cadastro{
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    height: 500px;
+    width: 400px;
+    background-image: linear-gradient(darkcyan ,Grey);
+  }
+  .input_caixa{
+    border: none;
+    outline: none; 
+    margin-top: 10px;
+    padding: 4% 4%;
+    border-radius: 15px;
+    
+  }
+  .btn_in{
+    background-image: linear-gradient(to right, darkcyan ,black);
+    border: none;
+    color: #FFF;
+    padding: 4% 23%;
+    border-radius: 12px;
+  }
+  #h_cor{
+    margin-top: 5px;
+    text-align:center;
+    font-family: Arial;
+    color:white;
+  }
+  .bt {
+    border:1px solid #25692A;
+    border-radius:4px;
+    display:inline-block;
+    cursor:pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 10px;
+    text-decoration:none;
+    } 

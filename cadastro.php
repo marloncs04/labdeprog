@@ -61,23 +61,28 @@
     </main>
   
     <div class="col-100">
-        <div class="content texto-destaque">
-            <h1>
-                <strong>Anuncie uma vaga!</strong>
-            </h1>
-            <form action="./php/cadastro.php" method="POST" enctype="multipart/form-data" > 
-                    <label>Título da Vaga: </label><br>
-                    <input placeholder="" type="text" name="tituloVaga"/><br>
-                    <label>Descrição da Vaga: </label><br>
-                    <input placeholder="" type="text" name="descricaoVaga"/><br>
-                    <label>Preço: </label><br>
-                    <input placeholder="" type="number" name="valor"/><br>
-                    <label>Imagem: </label><br>
-                    <input placeholder="" type="file" name="arquivo"/><br>
-                    <input type="submit" id="cadastrar" />
-                </form>
+        
+        <div class="Cadastro">
+            <br><br><br><br>
+            <form action="./classes/Vaga_class.php" method="POST" enctype="multipart/form-data" > 
+            <h3 id="h_cor">Cadastro De Vaga</h3>
+            <input class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
+            <br><br>
+            <input  class="input_caixa" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao">
+            <br><br>
+            <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
+            <br><br>
+            <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
+
+            <button class="btn_in" id="cadastrar" >Cadastrar</button>
+            <br>
+        
         </div>
+        
+
     </div>
+
+
 </footer>
 <div class="col-100 footer">
     <div class="content">
