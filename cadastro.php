@@ -43,13 +43,13 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href ="">Início</a>
+                        <a href ="index.html">Início</a>
                     </li>
                     <li>
-                        <a href ="">Sobre</a>
+                        <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="cadastro.html">Anuncie uma vaga!</a>
+                        <a href ="cadastro.php">Anuncie uma vaga!</a>
                     </li>
                 </ul>
             </div>
