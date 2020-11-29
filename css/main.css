@@ -257,3 +257,11 @@ li.slick-active button{
     padding:6px 10px;
     text-decoration:none;
     } 
+
+.textao{
+    border: none;
+    outline: none; 
+    margin-top: 10px;
+    padding: 5% 5%;
+    border-radius: 15px;
+}

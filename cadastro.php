@@ -68,9 +68,9 @@
                 <h3 id="h_cor">Cadastro De Vaga</h3>
                 <input class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
                 <br><br>
-                <input  class="input_caixa" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao">
-                <br><br>
                 <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
+                <br><br>
+                <textarea  class="Textao" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao"></textarea>
                 <br><br>
                 <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
 
