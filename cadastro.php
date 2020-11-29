@@ -65,18 +65,18 @@
         <div class="Cadastro">
             <br><br><br><br>
             <form action="./classes/Vaga_class.php" method="POST" enctype="multipart/form-data" > 
-            <h3 id="h_cor">Cadastro De Vaga</h3>
-            <input class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
-            <br><br>
-            <input  class="input_caixa" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao">
-            <br><br>
-            <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
-            <br><br>
-            <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
+                <h3 id="h_cor">Cadastro De Vaga</h3>
+                <input class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
+                <br><br>
+                <input  class="input_caixa" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao">
+                <br><br>
+                <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
+                <br><br>
+                <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
 
-            <button class="btn_in" id="cadastrar" >Cadastrar</button>
-            <br>
-        
+                <button class="btn_in" id="cadastrar" >Cadastrar</button>
+                <br>
+            </form>
         </div>
         
 
