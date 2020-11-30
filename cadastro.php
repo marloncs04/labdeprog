@@ -12,7 +12,7 @@
         <main>
             <div class= "header-1">
                 <div class= "logo">
-                    <a href ="index.html"> 
+                    <a href ="http://localhost/labdeprog/"> 
                         <img src= "imagens/logotemvagaai.png"> 
                     </a>
                 </div>
@@ -43,7 +43,7 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href ="index.html">Início</a>
+                        <a href ="http://localhost/labdeprog/">Início</a>
                     </li>
                     <li>
                         <a href ="sobre.html">Sobre</a>
@@ -64,7 +64,7 @@
         
         <div class="Cadastro">
             <br><br><br><br>
-            <form action="./classes/Vaga_class.php" method="POST" enctype="multipart/form-data" > 
+            <form action="./cadastro.php" method="POST" enctype="multipart/form-data" > 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
                 <input require class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
                 <br><br>
@@ -114,7 +114,7 @@
 
 <?php
     
-    if (isset($_POST['titulo']))
+    if (isset($_POST['cadastrar']))
     {
         $titulo = addcslashes($_POST['titulo']);
         $valor = addcslashes($_POST['valor']);
