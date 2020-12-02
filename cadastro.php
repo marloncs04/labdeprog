@@ -64,15 +64,15 @@
         
         <div class="Cadastro">
             <br><br><br><br>
-            <form action="./cadastro.php" method="POST" enctype="multipart/form-data" > 
+            <form action="cadastrar.php" method="POST" > 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
-                <input require class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
+                <input require class="input_caixa" type="text" name="titulo" placeholder="Titulo da vaga">
                 <br><br>
-                <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
+                <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" >
                 <br><br>
-                <textarea  class="textao" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao"></textarea>
+                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao"></textarea>
                 <br><br>
-                <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
+                <input class="bt" type="file" placeholder="Arquivo" name="foto" multiple ></input><br><br>
 
                 <button class="btn_in" id="cadastrar" >Cadastrar</button>
                 <br>
@@ -112,47 +112,3 @@
 
 </html>
 
-<?php
-    
-    if (isset($_POST['cadastrar']))
-    {
-        $titulo = addcslashes($_POST['titulo']);
-        $valor = addcslashes($_POST['valor']);
-        $descricao = addcslashes($_POST['descricao']);
-        $foto = array();
-        if(isset($_FILES['foto']))
-        {
-            for($i=0; $i < count($_FILES['foto']['name']); $i++)
-            {
-                $nome_arquivo = md5($_FILES['foto']['name']['$i'].rand(1,999)).'jpg';
-                move_uploaded_file($_FILES['foto']['tmp_name'][$i], './imagensVagas/'.$nome_arquivo);
-
-                array_push($foto, $nome_arquivo);
-            }
-
-        }
-
-        if(!empty($titulo) && !empty($descricao) && !empty($valor))
-        {
-            require 'classes/Vaga_class.php';
-            $p = new Vaga_class('localhost','temvagaai','root', '');
-            $p->cadastrarVaga($titulo, $descricao, $preco, $foto);
-            ?>
-                <script type="text/javascript">
-                    alert('Vaga cadastrada com sucesso!');
-                </script>
-            <?php
-            
-        }else{
-            ?>
-            <script type="text/javascript">
-                alert('Preencha todos os campos!');
-            </script>
-            <?php
-        }
-    }
-
-
-
-
-?>
