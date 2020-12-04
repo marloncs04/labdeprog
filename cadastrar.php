@@ -2,7 +2,7 @@
     //header("Location: index.html");
 
     if(isset($_POST['titulo']) && !empty($_POST['titulo']) && ($_POST['descricao']) && !empty($_POST['descricao']) && ($_POST['valor']) && !empty($_POST['valor']) && 
-    ($_POST['foto']) && !empty($_POST['foto'])){
+    ($_FILES['foto']) && !empty($_FILES['foto'])){
 
         require 'conectar.php';
         require 'classes/Vaga_class.php';
@@ -15,7 +15,7 @@
         $foto = array();
 
 
-        if($u->cadastrarVaga($titulo, $descricao, $valor, $foto = array()) == true){
+        if($u->cadastrarVaga($titulo, $descricao, $valor, $foto) == true){
             if(isset($_FILES['foto'])){
                 for($i=0; $i < count($_FILES['foto']['name']); $i++){
                     $nome_arquivo = md5($_FILES['foto']['name']['$i'].rand(1,999)).'jpg';
@@ -25,7 +25,7 @@
                 }
             }
             if(isset($_SESSION['cadastro'])){
-                header("Location: index.html");
+                header("Location: cadastro.php");
                 }else{
                     header("location: cadastro.php");
                 }

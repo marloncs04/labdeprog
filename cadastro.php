@@ -63,16 +63,21 @@
     <div class="col-100">
         
         <div class="Cadastro">
-            <br><br><br><br>
+            <br><br><br>
             <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
-                <input require class="input_caixa" type="text" name="titulo" placeholder="Titulo da vaga">
+            
+                <?php if(isset($_SESSION['cadastro'])){
+                    echo ("Vaga cadastrada com sucesso!");
+                } ?>
+                <br>
+                <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga">
                 <br><br>
-                <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" >
+                <input  class="input_caixa" type="number" step="0.01" min="0" name="valor" placeholder="Valor" required >
                 <br><br>
-                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao"></textarea>
+                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao" required></textarea>
                 <br><br>
-                <input class="bt" type="file" placeholder="Arquivo" name="foto" multiple ></input><br><br>
+                <input class="bt" type="file" placeholder="Arquivo" name="foto" required></input><br><br>
 
                 <button class="btn_in" id="cadastrar" >Cadastrar</button>
                 <br>
