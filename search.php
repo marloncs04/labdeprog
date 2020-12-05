@@ -62,7 +62,7 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Resultados</strong>
+                <strong>Exibindo < ? > resultados..</strong>
             </h1>
             <p>
                 Exibindo resultados para a pesquisa de "Quartos"..

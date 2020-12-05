@@ -53,11 +53,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="busca">
-                <input placeholder="Pesquisa" type="text"/>
-                <button placeholder="idBusca" type="submit">Buscar</button> 
-            </div>
-        </div>
+         </div>
     </main>
   
     <div class="col-100">
