@@ -161,7 +161,7 @@
                             ?>
                                 <td>
                                     <a href=""> Editar </a>  
-                                    <a href="http://localhost/labdeprog/search.php?id=<?php echo $dados[$i]['idVaga']; ?>"> Deletar </a>
+                                    <a href="http://localhost/labdeprog/search.php?idVaga=<?php echo $dados[$i]['idVaga']; ?>"> Deletar </a>
                                 </td> 
                                 <br>
                             <?php
@@ -205,18 +205,20 @@
 </html>
 
 <?php
-    echo "não está dando certo";
+    //echo "não está dando certo";
     
-    if(isset($_GET['id']))
+    if(isset($_GET['idVaga']))
     {
-        require 'conectar.php';
-        require 'classes/Vaga_class.php';  
-        //$d = new Vaga_class();
+        require_once 'conectar.php';
+        require_once 'classes/Vaga_class.php';  
 
-        $id = addslashes($_GET['id']);
+        $d = new Vaga_class();
+
+        $id = addslashes($_GET['idVaga']);
         $d->deletarVaga($id);
-        echo "deu certo";
-        header("location: search.php");
+        //echo "deu certo";
+        
+        header("location: http://localhost/labdeprog/search.php");
     }
 
 ?>
