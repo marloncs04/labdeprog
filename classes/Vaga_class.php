@@ -44,9 +44,9 @@
         public function deletarVaga($id){
             global $conn;
 
-            $sql = "DELETE FROM tb_vagas WHERE idVaga = :id";
+            $sql = "DELETE FROM tb_vagas WHERE idVaga = ?";
             $sql = $conn->prepare($sql);
-            $sql->bindValue(":id", $id); 
+            $sql->bindValue("idVaga", $id); 
             $sql->execute();
         }
 

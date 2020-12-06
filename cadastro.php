@@ -65,10 +65,6 @@
             <br><br><br>
             <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
-            
-                <?php if(isset($_SESSION['cadastro'])){
-                    echo ("Vaga cadastrada com sucesso!");
-                } ?>
                 <br>
                 <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga">
                 <br><br>
