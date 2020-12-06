@@ -68,12 +68,12 @@ main, .content{
 }
 .menu{
     float: left;
-    width:48%;
+    width: 62%;
 }
 .busca{
     text-align: center;
-    width: 35%;
-    float: right;
+    width: 38%;
+    float: left;
 }
 .busca input{
     background-image: url('../imagens/lupa_i.png');

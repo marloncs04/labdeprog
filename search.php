@@ -12,7 +12,7 @@
         <main>
             <div class= "header-1">
                 <div class= "logo">
-                    <a href ="index.html"> 
+                    <a href ="http://localhost/labdeprog/"> 
                         <img src= "./imagens/logotemvagaai.png"> 
                     </a>
                 </div>
@@ -41,18 +41,18 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul>
+            <ul>
                     <li>
-                        <a href ="index.html">Início</a>
+                        <a href ="http://localhost/labdeprog/">Início</a>
                     </li>
                     <li>
                         <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="search.php">Vagas Disponíveis</a>
+                        <a href ="search.php">Vagas</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie uma vaga!</a>
+                        <a href ="cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +66,7 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Vagas disponíveis..</strong>
+                <strong>Vagas disponíveis</strong>
             </h1>
             <p>
                 Exibindo todas as vagas disponíveis..
@@ -160,7 +160,8 @@
                             }
                             ?>
                                 <td>
-                                    <a href="">Editar</a>  <a href="">Deletar</a>
+                                    <a href="">Editar</a>  
+                                    <a href="search.php?id=<?php echo $dados[$i]["idVaga"]; ?>">Deletar</a>
                                 </td> 
                                 <br>
                             <?php
@@ -202,3 +203,17 @@
 
 
 </html>
+
+<?php
+    if(isset($_GET['idVaga']))
+    {
+        require 'conectar.php';
+        require 'classes/Vaga_class.php';  
+        $d = new Vaga_class();
+        $id = addslashes($_GET['idVaga']);
+        $d->deletarVaga($id);
+
+        header("location: search.php");
+    }
+
+?>

@@ -49,10 +49,10 @@
                         <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="search.php">Vagas Disponíveis</a>
+                        <a href ="search.php">Vagas</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie uma vaga!</a>
+                        <a href ="cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>

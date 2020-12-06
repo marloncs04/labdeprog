@@ -3,7 +3,7 @@
     class Vaga_class{
 
         public function cadastrarVaga($titulo, $descricao, $valor, $foto){
-
+            global $conn;
             //inserindo na tabela de vagas
             $sql = "INSERT INTO tb_vagas (titulo, descricao, preco) VALUES ( ?, ?, ?)";
             $sql = $conn->prepare($sql);
@@ -41,8 +41,13 @@
 
         }
 
-        public function deletarVaga(){
+        public function deletarVaga($id){
+            global $conn;
 
+            $sql = "DELETE FROM tb_vagas WHERE idVaga = :id";
+            $sql = $conn->prepare($sql);
+            $sql->bindValue(":id", $id); 
+            $sql->execute();
         }
 
         public function editarVaga(){
