@@ -8,6 +8,13 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
     <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <title>Tem VAGA ai?!</title>
+
+    <style>
+        .dark-mode {
+          background-color: black;
+          color: white;
+        }
+    </style>
 </head>
 <body>
     <header class= "menu-principal">
@@ -34,6 +41,9 @@
                                 <a href="https://twitter.com/">
                                     <img src="imagens/twiter_icone.png">
                                 </a>
+                            </li>
+                            </li>
+                                    <button class="btn_in2"onclick="myFunction()">color palette</button>
                             </li>
                         </ul>
                 </div>
@@ -144,7 +154,12 @@
         </p>
     </div>
 </div>
-
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
     
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>

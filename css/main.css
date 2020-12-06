@@ -1,6 +1,4 @@
 body{
-    
-    background: url(../imagens/papelfundo.webp);
     background-size: cover;
     width:100%;
     height: 100%;
@@ -12,7 +10,7 @@ ul{
 .menu-principal{
     width: 100%;
     background-color: darkcyan;
-    height: 75px;
+    height: 83px;
 }
 main, .content{
     text-align: center;
@@ -61,7 +59,7 @@ main, .content{
     color: #00bac6;
 }
 .menu ul li a{
-    color: black;
+    color: rgb(151, 145, 145);
     text-decoration: none;
     font-size: 20px;
     text-transform: uppercase;
@@ -239,6 +237,14 @@ li.slick-active button{
     color: #FFF;
     padding: 4% 23%;
     border-radius: 12px;
+  }
+  .btn_in2{
+    background-image: darkcyan ;
+    border: white;
+    
+    padding: 3% 17%;
+    border-radius: 12px;
+    margin-top: 5px;
   }
   #h_cor{
     margin-top: 5px;
