@@ -12,7 +12,7 @@
         <main>
             <div class= "header-1">
                 <div class= "logo">
-                    <a href ="index.html"> 
+                    <a href ="http://localhost/labdeprog/"> 
                         <img src= "imagens/logotemvagaai.png"> 
                     </a>
                 </div>
@@ -43,36 +43,40 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href ="index.html">Início</a>
+                        <a href ="http://localhost/labdeprog/">Início</a>
                     </li>
                     <li>
                         <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie uma vaga!</a>
+                        <a href ="search.php">Vagas</a>
+                    </li>
+                    <li>
+                        <a href ="cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>
-            <div class="busca">
-                <input placeholder="Pesquisa" type="text"/>
-                <button placeholder="idBusca" type="submit">Buscar</button> 
-            </div>
-        </div>
+         </div>
     </main>
   
     <div class="col-100">
         
         <div class="Cadastro">
-            <br><br><br><br>
-            <form action="./classes/Vaga_class.php" method="POST" enctype="multipart/form-data" > 
+            <br><br><br>
+            <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
-                <input class="input_caixa" type="text" name="tituloVaga" placeholder="Titulo da vaga"id="titulo" >
+            
+                <?php if(isset($_SESSION['cadastro'])){
+                    echo ("Vaga cadastrada com sucesso!");
+                } ?>
+                <br>
+                <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga">
                 <br><br>
-                <input  class="input_caixa" type="number"  name="valor" placeholder="Valor" id="valor">
+                <input  class="input_caixa" type="number" step="0.01" min="0" name="valor" placeholder="Valor" required >
                 <br><br>
-                <textarea  class="Textao" type="text" name="descricaoVaga" placeholder="Descrição da Vaga" id="descricao"></textarea>
+                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao" required></textarea>
                 <br><br>
-                <input class="bt" type="file" placeholder="Arquivo" name="foto[]" multiple id="foto"></input><br><br>
+                <input class="bt" type="file" placeholder="Arquivo" name="foto" required></input><br><br>
 
                 <button class="btn_in" id="cadastrar" >Cadastrar</button>
                 <br>
@@ -111,3 +115,4 @@
 
 
 </html>
+

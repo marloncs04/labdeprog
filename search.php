@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
         <main>
             <div class= "header-1">
                 <div class= "logo">
-                    <a href ="index.html"> 
+                    <a href ="http://localhost/labdeprog/"> 
                         <img src= "./imagens/logotemvagaai.png"> 
                     </a>
                 </div>
@@ -40,15 +41,18 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul>
+            <ul>
                     <li>
-                        <a href ="index.html">Início</a>
+                        <a href ="http://localhost/labdeprog/">Início</a>
                     </li>
                     <li>
                         <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie uma vaga!</a>
+                        <a href ="search.php">Vagas</a>
+                    </li>
+                    <li>
+                        <a href ="cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>
@@ -62,12 +66,12 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Resultados</strong>
+                <strong>Vagas disponíveis</strong>
             </h1>
             <p>
-                Exibindo resultados para a pesquisa de "Quartos"..
+                Exibindo todas as vagas disponíveis..
             </p> 
-                <div class="col-3 bloco">
+                <!--<div class="col-3 bloco">
                     <div class= "zoom">
                         <img src="./imagens/img1.jpg">
                         <h3>
@@ -132,19 +136,43 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/sofa1.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
+-->                
+                <table class="tabela-vagas">
+                    <tr>
+                        <td>VAGA</td> 
+                        <td>DESCRIÇÃO</td> 
+                        <td>PREÇO</td> 
+                        <td>DATA DE CADASTRO</td> 
 
-                        </p>
-                    </div>
-                </div>
+                <?php
+                    require 'conectar.php';
+                    require 'classes/Vaga_class.php';
+            
+                    $p = new Vaga_class();
+                    $dados = $p->buscarVaga();
+                    if(count($dados) > 0){
+                        for ($i=0; $i < count($dados); $i++){
+                            echo "<tr>";
+                            foreach ($dados[$i] as $k => $v){
+                                if($k != "idVaga"){
+                                    echo "<td>".$v."</td>";
+                                }
+                            }
+                            ?>
+                                <td>
+                                    <a href="">Editar</a>  
+                                    <a href="search.php?id=<?php echo $dados[$i]["idVaga"]; ?>">Deletar</a>
+                                </td> 
+                                <br>
+                            <?php
+                            echo "</tr>";
+                        }
+                    }else{
+                        echo "Não há nenhum cadastro de vagas!";
+                    }
+
+                ?>
+                </table>
         </div>
     </div>
 </footer>
@@ -175,3 +203,17 @@
 
 
 </html>
+
+<?php
+    if(isset($_GET['idVaga']))
+    {
+        require 'conectar.php';
+        require 'classes/Vaga_class.php';  
+        $d = new Vaga_class();
+        $id = addslashes($_GET['idVaga']);
+        $d->deletarVaga($id);
+
+        header("location: search.php");
+    }
+
+?>
