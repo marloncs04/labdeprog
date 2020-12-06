@@ -3,7 +3,7 @@
     class Vaga_class{
 
         public function cadastrarVaga($titulo, $descricao, $valor, $foto){
-            global $conn;
+
             //inserindo na tabela de vagas
             $sql = "INSERT INTO tb_vagas (titulo, descricao, preco) VALUES ( ?, ?, ?)";
             $sql = $conn->prepare($sql);
@@ -30,21 +30,14 @@
             }
         }
 
-        public function buscarVaga($busca){
+        public function buscarVaga(){
             global $conn;
-            global $result;
-
-            $sql = "SELECT * FROM tb_vagas WHERE titulo LIKE :busca";
+            $result = array();
+            $sql = "SELECT * FROM tb_vagas ORDER BY titulo";
             $sql = $conn->prepare($sql);
-            $sql->bindValue("titulo", $titulo);
             $sql->execute();
-
-            if($sql->rowCount() > 0){
-                $result = true;
-                header('Location: search.html');
-            }else{
-                $result = false;
-            }
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
 
         }
 

@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -48,6 +49,9 @@
                         <a href ="sobre.html">Sobre</a>
                     </li>
                     <li>
+                        <a href ="search.php">Vagas Disponíveis</a>
+                    </li>
+                    <li>
                         <a href ="cadastro.php">Anuncie uma vaga!</a>
                     </li>
                 </ul>
@@ -62,12 +66,12 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Exibindo < ? > resultados..</strong>
+                <strong>Vagas disponíveis..</strong>
             </h1>
             <p>
-                Exibindo resultados para a pesquisa de "Quartos"..
+                Exibindo todas as vagas disponíveis..
             </p> 
-                <div class="col-3 bloco">
+                <!--<div class="col-3 bloco">
                     <div class= "zoom">
                         <img src="./imagens/img1.jpg">
                         <h3>
@@ -132,19 +136,42 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/sofa1.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
+-->                
+                <table class="tabela-vagas">
+                    <tr>
+                        <td>VAGA</td> 
+                        <td>DESCRIÇÃO</td> 
+                        <td>PREÇO</td> 
+                        <td>DATA DE CADASTRO</td> 
 
-                        </p>
-                    </div>
-                </div>
+                <?php
+                    require 'conectar.php';
+                    require 'classes/Vaga_class.php';
+            
+                    $p = new Vaga_class();
+                    $dados = $p->buscarVaga();
+                    if(count($dados) > 0){
+                        for ($i=0; $i < count($dados); $i++){
+                            echo "<tr>";
+                            foreach ($dados[$i] as $k => $v){
+                                if($k != "idVaga"){
+                                    echo "<td>".$v."</td>";
+                                }
+                            }
+                            ?>
+                                <td>
+                                    <a href="">Editar</a>  <a href="">Deletar</a>
+                                </td> 
+                                <br>
+                            <?php
+                            echo "</tr>";
+                        }
+                    }else{
+                        echo "Não há nenhum cadastro de vagas!";
+                    }
+
+                ?>
+                </table>
         </div>
     </div>
 </footer>
