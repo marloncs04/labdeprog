@@ -10,7 +10,7 @@ ul{
 .menu-principal{
     width: 100%;
     background-color: darkcyan;
-    height: 83px;
+    height: 85px;
 }
 main, .content{
     text-align: center;
@@ -272,3 +272,21 @@ li.slick-active button{
     border-radius: 15px;
 }
 
+.tabela-vagas {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+.tabela-vagas td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+              
+            
+            
+           

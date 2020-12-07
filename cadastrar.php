@@ -19,7 +19,7 @@
             if(isset($_FILES['foto'])){
                 for($i=0; $i < count($_FILES['foto']['name']); $i++){
                     $nome_arquivo = md5($_FILES['foto']['name']['$i'].rand(1,999)).'jpg';
-                    move_uploaded_file($_FILES['foto']['tmp_name'][$i], './imagensVagas/'.$nome_arquivo);
+                    move_uploaded_file($_FILES['foto']['tmp_name'][$i], 'imagensVagas/'.$nome_arquivo);
 
                     array_push($foto, $nome_arquivo);
                 }

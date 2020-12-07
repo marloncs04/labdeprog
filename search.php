@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,6 +6,11 @@
     <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <title>Tem VAGA ai?!</title>
 </head>
+<style>
+    tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+    </style>
 <body>
     <header class= "menu-principal">
         <main>
@@ -143,6 +147,7 @@
                         <td>DESCRIÇÃO</td> 
                         <td>PREÇO</td> 
                         <td>DATA DE CADASTRO</td> 
+                        <td></td> 
 
                 <?php
                     require 'conectar.php';
@@ -217,8 +222,7 @@
         $id = addslashes($_GET['idVaga']);
         $d->deletarVaga($id);
         //echo "deu certo";
-        
-        header("location: http://localhost/labdeprog/search.php");
+    
     }
 
 ?>

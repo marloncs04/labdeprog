@@ -48,6 +48,7 @@
             $sql = $conn->prepare($sql);
             $sql->bindValue("idVaga", $id); 
             $sql->execute();
+
         }
 
         public function editarVaga(){
