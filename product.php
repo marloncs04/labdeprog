@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -60,15 +61,15 @@
     <div class="col-100">
         <div class="content texto-destaque">
             <h1>
-                <strong>Casa com 3 quartos e piscina</strong>
+                <strong><?php if(isset($b->result)){ echo $b->$result['titulo'];} ?></strong>
             </h1> 
                 <div class="product">
                     <img src="./imagens/piscina.jpg">
                     <h3>
-                        <b>R$ 950 diária</b>
+                        <b>R$ <?php if(isset($result)){ echo $result['preco'];} ?></b>
                     </h3>
                     <p>
-                        Typewriter fonts are typically the fonts resembling the printed letters on a classic typewriter, which is used for composing written documents during the time when there are no computers and only typewriters exist. Typewriter fonts often take on a grungy and classic look and are used to create digital art. Courier is probably the best known and at the same time the most overused typewriter font. American Typewriter designed by Joel Kaden and Tony Stan in 1974 is another well-known typewriter font, which is used by the famous “I Love New York” logo.
+                    <?php if(isset($result)){ echo $result['descricao'];} ?>
                     </p>
 
                     <button placeholder="idReserva" type="submit">Reserve Agora</button>
@@ -103,3 +104,21 @@
 
 
 </html>
+
+<?php 
+    if(isset($_POST['busca']) && !empty($_POST['busca']))
+    {
+        require 'conectar.php';
+        require 'classes/Vaga_class.php';
+
+        $b = new Vaga_class();
+
+        $titulo = addslashes($_POST['busca']);
+
+        $b->buscar($titulo);
+
+       
+    }
+
+
+?>

@@ -62,19 +62,22 @@
     <div class="col-100">
         
         <div class="Cadastro">
-            <br><br><br>
+            <br><br><br>    
             <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
                 <h3 id="h_cor">Cadastro De Vaga</h3>
                 <br>
-                <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga">
+                <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga"
+                value="<?php if(isset($res)){ echo $res['titulo'];}?>">
                 <br><br>
-                <input  class="input_caixa" type="number" step="0.01" min="0" name="valor" placeholder="Valor" required >
+                <input  class="input_caixa" type="number" step="0.01" min="0" name="valor" placeholder="Valor" required 
+                value="<?php if(isset($res)){ echo $res['preco'];}?>">
                 <br><br>
-                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao" required></textarea>
+                <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao" required
+                value="<?php if(isset($res)){ echo $res['descricao'];}?>"></textarea>
                 <br><br>
                 <input class="bt" type="file" placeholder="Arquivo" name="foto" required></input><br><br>
 
-                <button class="btn_in" id="cadastrar" >Cadastrar</button>
+                <input type="submit" class="btn_in" id="cadastrar" value="<?php if(isset($res)){ echo "Atualizar";}else{echo "Cadastrar";}?>"></input>
                 <br>
             </form>
         </div>
@@ -112,3 +115,20 @@
 
 </html>
 
+<?php
+
+    if(isset($_GET['idVagaUp']))
+    {
+        require_once 'conectar.php';
+        require_once 'classes/Vaga_class.php';  
+
+        $e = new Vaga_class();
+
+        $id_up = addslashes($_GET['idVagaUp']);
+        $res = $e->editarVaga1($id_up);
+
+        //echo "deu certo";
+    
+    }
+
+?>

@@ -69,8 +69,11 @@
                 </ul>
             </div>
             <div class="busca">
-                <input placeholder="Pesquisa" type="text"/>
-                <button placeholder="idBusca" type="submit">Buscar</button> 
+                <form method="POST" action="product.php">
+                    <input placeholder="Pesquisa" type="text" name="busca"/>
+                    <button placeholder="idBusca" type="submit"  >Buscar</button> 
+                </form>
+                
             </div>
         </div>
     </main>

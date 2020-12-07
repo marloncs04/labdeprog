@@ -51,8 +51,16 @@
 
         }
 
-        public function editarVaga(){
+        public function buscar($titulo){
+            global $conn;
+            $result = array();
+            $sql = "SELECT * FROM tb_vagas  WHERE titulo LIKE '%$titulo%'";
+            $sql = $conn->prepare($sql);
+            $sql->bindValue("titulo", $titulo);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
 
+            return $result;
 
         }
     }

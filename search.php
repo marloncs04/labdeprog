@@ -75,72 +75,7 @@
             <p>
                 Exibindo todas as vagas disponíveis..
             </p> 
-                <!--<div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/img1.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/quarto2.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/quarto3.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/quarto5.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-3 bloco">
-                    <div class= "zoom">
-                        <img src="./imagens/quarto4.jpg">
-                        <h3>
-                            <b>Titulo da imagem</b>
-                        </h3>
-                        <p>
-                            descricao da img descricao da img descricao da img
-                            descricao da img descricao da img descricao da img
-
-                        </p>
-                    </div>
-                </div>
--->                
+               
                 <table class="tabela-vagas">
                     <tr>
                         <td>VAGA</td> 
@@ -165,7 +100,7 @@
                             }
                             ?>
                                 <td>
-                                    <a href=""> Editar </a>  
+                                    <a href="http://localhost/labdeprog/cadastro.php?idVagaUp=<?php echo $dados[$i]['idVaga']; ?>"> Editar </a>  
                                     <a href="http://localhost/labdeprog/search.php?idVaga=<?php echo $dados[$i]['idVaga']; ?>"> Deletar </a>
                                 </td> 
                                 <br>
@@ -179,6 +114,8 @@
                 ?>
                 </table>
         </div>
+       
+
     </div>
 </footer>
 <div class="col-100 footer">
