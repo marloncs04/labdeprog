@@ -101,7 +101,7 @@
                             ?>
                                 <td>
                                     <a href="http://localhost/labdeprog/cadastro.php?idVagaUp=<?php echo $dados[$i]['idVaga']; ?>"> Editar </a>  
-                                    <a href="http://localhost/labdeprog/search.php?idVaga=<?php echo $dados[$i]['idVaga']; ?>"> Deletar </a>
+                                    <a href="http://localhost/labdeprog/search.php?idVaga=<?php echo $dados[$i]['idVaga']; ?>" id="deletar"> Deletar </a>
                                 </td> 
                                 <br>
                             <?php
@@ -134,7 +134,15 @@
         </p>
     </div>
 </div>
-
+        <script>
+            redirect = document.getElementById('deletar')
+            console.log(redirect)
+            redirect.addEventListener("click", () => { 
+                setTimeout(() => {
+                    window.location ="search.php"
+                } , 10000)
+            })
+        </script>
     
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
@@ -158,6 +166,8 @@
 
         $id = addslashes($_GET['idVaga']);
         $d->deletarVaga($id);
+
+        
         //echo "deu certo";
     
     }

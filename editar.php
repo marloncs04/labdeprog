@@ -1,7 +1,7 @@
 <?php
     //header("Location: index.html");
 
-    if(isset($_POST['titulo']) && !empty($_POST['titulo']) && ($_POST['descricao']) && !empty($_POST['descricao']) && ($_POST['valor']) && !empty($_POST['valor']) && 
+    if(isset($_GET['idVagaUp']) && !empty($_GET['idVagaUp']) && ($_POST['titulo']) && !empty($_POST['titulo']) && ($_POST['descricao']) && !empty($_POST['descricao']) && ($_POST['valor']) && !empty($_POST['valor']) && 
     ($_FILES['foto']) && !empty($_FILES['foto'])){
 
         require 'conectar.php';
@@ -9,13 +9,14 @@
 
         $u = new Vaga_class();
 
+        $id = addslashes($_GET['idVagaUp']);
         $titulo = addslashes($_POST['titulo']);
         $valor = addslashes($_POST['valor']);
         $descricao = addslashes($_POST['descricao']);
         $foto = array();
+     
 
-
-        if($u->cadastrarVaga($titulo, $descricao, $valor, $foto) == true){
+        if($u->editarVaga($id, $titulo, $descricao, $valor, $foto) == true){
             if(isset($_FILES['foto'])){
                 for($i=0; $i < count($_FILES['foto']['name']); $i++){
                     $nome_arquivo = md5($_FILES['foto']['name']['$i'].rand(1,999)).'jpg';
@@ -24,7 +25,7 @@
                     array_push($foto, $nome_arquivo);
                 }
             }
-            if(isset($_SESSION['cadastro'])){
+            if(isset($_SESSION['editar'])){
                 header("Location: search.php");
                 }else{
                     header("location: search.php");

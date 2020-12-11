@@ -8,9 +8,14 @@
 
         $titulo = addslashes($_POST['busca']);
 
-        $b->buscar($titulo);
+        //$b->buscar($titulo);
 
-        
+        $resultado = $b->buscar($titulo);
+
+
+        // echo "<prev>";
+        // print_r($resultado);
+        // echo "<prev>";
     }
 
 
@@ -73,25 +78,37 @@
                 </ul>
             </div>
         </div>
+        <div class="busca">
+                <form method="POST" action="product.php">
+                    <input placeholder="Pesquisa" type="text" name="busca"/>
+                    <button placeholder="idBusca" type="submit"  >Buscar</button> 
+                </form>
+                
+            </div>
     </main>
   
     <div class="col-100">
+        <?php 
+            foreach($resultado as $valor):
+            ?>
         <div class="content texto-destaque">
             <h1>
-                <strong><?php if(isset($b->result)){ echo $b->$result['titulo'];} ?></strong>
+                <strong><?php echo $valor['titulo']; ?></strong>
             </h1> 
                 <div class="product">
-                    <img src="./imagens/piscina.jpg">
+                <img src="./imagens/quarto3.jpg">
                     <h3>
-                        <b>R$ <?php if(isset($result)){ echo $result['preco'];} ?></b>
+                        <b>R$ <?php echo $valor['preco']; ?></b>
                     </h3>
                     <p>
-                    <?php if(isset($result)){ echo $result['descricao'];} ?>
+                    <?php echo $valor['descricao']; ?>
                     </p>
 
                     <button placeholder="idReserva" type="submit">Reserve Agora</button>
                 </div>
+
         </div>
+        <?php endforeach ?>
     </div>
 </footer>
 <div class="col-100 footer">

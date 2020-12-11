@@ -49,6 +49,7 @@
             $sql->bindValue("idVaga", $id); 
             $sql->execute();
 
+           
         }
 
         public function buscar($titulo){
@@ -58,11 +59,49 @@
             $sql = $conn->prepare($sql);
             $sql->bindValue("titulo", $titulo);
             $sql->execute();
-            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
             return $result;
 
+
         }
+        public function buscarIndividual($id) {
+            global $conn;
+			$sql = "SELECT * FROM tb_vagas  WHERE idVaga = '$id'";
+			$sql = $conn->prepare($sql);
+            $sql->execute();
+			return $sql->fetch(PDO::FETCH_ASSOC);
+        }
+        
+        public function editarVaga($id, $titulo, $descricao, $valor, $foto){
+           
+            global $conn;
+            //inserindo na tabela de vagas
+            $sql = "UPDATE tb_vagas SET titulo='$titulo', descricao='$descricao' , preco='$valor' WHERE idVaga = '$id'";
+            $sql = $conn->prepare($sql);
+            $sql->bindValue("titulo", $titulo); 
+            $sql->bindValue("descricao", $descricao); 
+            $sql->bindValue("preco", $valor); 
+            $sql->execute(array($titulo, $descricao, $valor));
+
+           
+            //inserindo na tabela de imagens, que está ligada no banco por chave estrangeira na vaga inserida
+            if(count($foto) > 0){
+                $sql = "INSERT INTO tb_imagens (nome_imagem, fk_id_vaga) VALUES ('$nome_imagem', '$idVaga')";
+                $sql = $conn->prepare($sql);
+                $sql->bindValue("nome_imagem", $nome_imagem);
+                $sql->bindValue("fk_id_vaga", $idVaga);
+                $sql->execute();
+            }
+            $_SESSION['editar'] = true;
+            
+            if($_SESSION['editar'] == true) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
     }
     
 

@@ -1,3 +1,20 @@
+<?php
+
+    if(isset($_GET['idVagaUp']))
+    {
+        require_once 'conectar.php';
+        require_once 'classes/Vaga_class.php';  
+
+        $e = new Vaga_class();
+
+        $id_up = addslashes($_GET['idVagaUp']);
+        $res = $e->buscarIndividual($id_up);
+
+        //echo "deu certo";
+    
+    }
+
+?>
 
 <html>
 <head>
@@ -63,8 +80,8 @@
         
         <div class="Cadastro">
             <br><br><br>    
-            <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
-                <h3 id="h_cor">Cadastro De Vaga</h3>
+            <form action="<?php if(isset($res)){ echo "editar.php?idVagaUp=".$id_up;}else{echo "cadastrar.php";}?>" method="POST" enctype="multipart/form-data"> 
+                <h3 id="h_cor"><?php if(isset($res)){ echo "Atualizar Vaga";}else{echo "Cadastre sua Vaga!";}?></h3>
                 <br>
                 <input require class="input_caixa" type="text" name="titulo" required placeholder="Titulo da vaga"
                 value="<?php if(isset($res)){ echo $res['titulo'];}?>">
@@ -73,7 +90,7 @@
                 value="<?php if(isset($res)){ echo $res['preco'];}?>">
                 <br><br>
                 <textarea  class="textao" type="text" name="descricao" placeholder="Descrição da Vaga" id="descricao" required
-                value="<?php if(isset($res)){ echo $res['descricao'];}?>"></textarea>
+                ><?php if(isset($res)){ echo $res['descricao'];}?></textarea>
                 <br><br>
                 <input class="bt" type="file" placeholder="Arquivo" name="foto" required></input><br><br>
 
@@ -115,20 +132,3 @@
 
 </html>
 
-<?php
-
-    if(isset($_GET['idVagaUp']))
-    {
-        require_once 'conectar.php';
-        require_once 'classes/Vaga_class.php';  
-
-        $e = new Vaga_class();
-
-        $id_up = addslashes($_GET['idVagaUp']);
-        $res = $e->editarVaga1($id_up);
-
-        //echo "deu certo";
-    
-    }
-
-?>
