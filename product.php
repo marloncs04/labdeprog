@@ -62,18 +62,18 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul>
+            <ul>
                     <li>
-                        <a href ="http://localhost/labdeprog/">Início</a>
+                        <a href ="./index.html">Início</a>
                     </li>
                     <li>
-                        <a href ="sobre.html">Sobre</a>
+                        <a href ="./sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="search.php">Vagas</a>
+                        <a href ="./search.php">Vagas</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie Agora!</a>
+                        <a href ="./cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>
@@ -96,7 +96,7 @@
                 <strong><?php echo $valor['titulo']; ?></strong>
             </h1> 
                 <div class="product">
-                <img src="<?php echo 'imagensVagas/'.$valor['nome_imagem']; ?>" width="100px" height="100px">
+                <img src="<?php echo 'imagensVagas/'.$valor['nome_imagem']; ?>" width="150px" height="150px">
                     <h3>
                         <b>R$ <?php echo $valor['preco']; ?></b>
                     </h3>

@@ -47,23 +47,20 @@
             <div class="menu">
             <ul>
                     <li>
-                        <a href ="http://localhost/labdeprog/">Início</a>
+                        <a href ="./index.html">Início</a>
                     </li>
                     <li>
-                        <a href ="sobre.html">Sobre</a>
+                        <a href ="./sobre.html">Sobre</a>
                     </li>
                     <li>
-                        <a href ="search.php">Vagas</a>
+                        <a href ="./search.php">Vagas</a>
                     </li>
                     <li>
-                        <a href ="cadastro.php">Anuncie Agora!</a>
+                        <a href ="./cadastro.php">Anuncie Agora!</a>
                     </li>
                 </ul>
             </div>
-            <div class="busca">
-                <input placeholder="Pesquisa" type="text"/>
-                <button placeholder="idBusca" type="submit">Buscar</button> 
-            </div>
+            
         </div>
     </main>
   
