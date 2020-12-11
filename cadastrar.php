@@ -14,22 +14,22 @@
         $descricao = addslashes($_POST['descricao']);
         $foto = array();
 
-
-        if($u->cadastrarVaga($titulo, $descricao, $valor, $foto) == true){
+        if($u->cadastrarVaga($titulo, $descricao, $valor) == true){
             if(isset($_FILES['foto'])){
-                for($i=0; $i < count($_FILES['foto']['name']); $i++){
-                    $nome_arquivo = md5($_FILES['foto']['name']['$i'].rand(1,999)).'jpg';
-                    move_uploaded_file($_FILES['foto']['tmp_name'][$i], 'imagensVagas/'.$nome_arquivo);
-
-                    array_push($foto, $nome_arquivo);
-                }
+                $ext = strtolower(substr($_FILES['foto']['name'],-4)); //Pegando extensão do arquivo
+                $nome_arquivo = md5($_FILES['foto']['name'].rand(1,999)).$ext;
+                move_uploaded_file($_FILES['foto']['tmp_name'], 'imagensVagas/'.$nome_arquivo);
+                
+                // chama funcao de cadastrar imagem
+                $u->cadastrarVagaImagem($nome_arquivo);
+                
             }
             if(isset($_SESSION['cadastro'])){
                 header("Location: search.php");
                 }else{
                     header("location: search.php");
                 }
-            }
+        }
     }
         
 

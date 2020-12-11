@@ -96,7 +96,7 @@
                 <strong><?php echo $valor['titulo']; ?></strong>
             </h1> 
                 <div class="product">
-                <img src="./imagens/quarto3.jpg">
+                <img src="<?php echo 'imagensVagas/'.$valor['nome_imagem']; ?>" width="100px" height="100px">
                     <h3>
                         <b>R$ <?php echo $valor['preco']; ?></b>
                     </h3>
